@@ -1,7 +1,8 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
-const config = require("config");
 
-const mongoURI = config.get("MongoURI");
+const mongoURI = process.env.MONGO_URI;
+
 // const mongoURI = "mongodb://localhost:27017/devsocial";
 module.exports = async () => {
   try {

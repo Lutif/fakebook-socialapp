@@ -1,6 +1,0 @@
-{
-  "MongoURI": "mongodb+srv://admin-lutif:mpZPFpaYcvyA8ciV@cluster0-wi3xo.mongodb.net/devsocial?retryWrites=true&w=majority",
-  "jwtSecret": "youwontgetit93s",
-  "clientId": "bdb5f287b3e92ed1279e",
-  "clientSecret": "e749588e5723d90ea08da76b06a5309c163012d1"
-}
