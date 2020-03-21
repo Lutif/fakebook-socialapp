@@ -11,7 +11,7 @@ app.use(express.json({ useUrlExtended: false }));
 connectDB();
 app.use("/api", router);
 
-if (process.env.NODE_ENV == "Production") {
+if (process.env.NODE_ENV == "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
