@@ -1,22 +1,23 @@
-const express = require('express');
-const auth = require('../../middleware/auth');
+const express = require("express");
+const auth = require("../../middleware/auth");
 const router = express.Router();
-const User = require('../../models/User');
+const User = require("../../models/User");
 
-const { check, validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const config = require('config');
+const { check, validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+// const config = require("config");
 //@route  api/auth
 //@desc  Test
 //@access public
 
-router.get('/auth', auth, async (req, res) => {
+router.get("/auth", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select('-password');
+    const user = await User.findById(req.user.id).select("-password");
+    console.log(user);
     return res.status(200).json(user);
   } catch {
-    return res.status(500).json({ msg: 'server error' });
+    return res.status(500).json({ msg: "server error" });
   }
 });
 
@@ -25,10 +26,10 @@ router.get('/auth', auth, async (req, res) => {
 //@access public
 
 router.post(
-  '/auth',
+  "/auth",
   [
-    check('email', 'Enter a valid email').isEmail(),
-    check('password', 'Password required').exists()
+    check("email", "Enter a valid email").isEmail(),
+    check("password", "Password required").exists()
   ],
   //checks for email and pasword
   async (req, res) => {
@@ -42,30 +43,30 @@ router.post(
       const user = await User.findOne({ email });
       //check if user exists
       if (!user) {
-        return res.status(400).json([{ msg: 'Invalid credentials ' }]);
+        return res.status(400).json([{ msg: "Invalid credentials " }]);
       }
       //compare pasword
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        return res.status(400).json([{ msg: 'Invalid credentials ' }]);
+        return res.status(400).json([{ msg: "Invalid credentials " }]);
       }
       //return auth token
       const payload = { user: { id: user.id } };
       jwt.sign(
         payload,
-        config.get('jwtSecret'),
+        process.env.JWT_SECRET,
         { expiresIn: 36000 },
         (err, token) => {
           if (err) {
             return res
               .status(5000)
-              .json([{ msg: 'jwt token cant be created' }]);
+              .json([{ msg: "jwt token cant be created" }]);
           }
           return res.status(201).json({ token });
         }
       );
     } catch (err) {
-      return res.status(500).json('Server error.');
+      return res.status(500).json("Server error.");
     }
   }
 );
