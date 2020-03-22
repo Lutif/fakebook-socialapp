@@ -10,9 +10,10 @@ const Profiles = ({ getAllProfiles, profile: { profiles } }) => {
   }, [getAllProfiles]);
   return (
     <Fragment>
-      <h1 class="large text-primary">Developers</h1>
+      <h1 class="large text-primary">Community </h1>
       <p class="lead">
-        <i class="fab fa-connectdevelop"></i> Browse and connect with developers
+        <i class="fab fa-connectdevelop"></i> Browse and connect with similiar
+        people
       </p>
       <div class="profiles">
         {profiles.map(dev => (
