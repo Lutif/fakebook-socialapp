@@ -7,7 +7,7 @@ import { removeComment } from "../../actions/post";
 // import Loading from "../layout/loading"
 
 function Comments({ removeComment, post: { comments, _id }, auth: { user } }) {
-  console.log("in comments component comments are ", comments);
+  // console.log("in comments component comments are ", comments);
   return (
     <div className="comments">
       {comments !== [] &&
@@ -16,7 +16,7 @@ function Comments({ removeComment, post: { comments, _id }, auth: { user } }) {
             <div>
               <Link href={`/profile/${comment.user}`}>
                 <img className="round-img" src={comment.avatar} alt="" />
-                <h4>John Doe</h4>
+                <h4>{comment.name || "Unknown"}</h4>
               </Link>
             </div>
             <div>

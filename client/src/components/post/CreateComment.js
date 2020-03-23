@@ -8,6 +8,7 @@ const CreateComment = ({ addComment, post: { post } }) => {
   const submitComment = e => {
     e.preventDefault();
     addComment(post._id, text);
+    setText("");
   };
   const onChange = e => {
     setText(e.target.value);

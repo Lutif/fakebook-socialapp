@@ -45,7 +45,6 @@ const CreateProfile = ({ createProfile, history }) => {
   const onSubmit = e => {
     e.preventDefault();
     createProfile(formData, history);
-    setFormData({});
   };
   return (
     <Fragment>

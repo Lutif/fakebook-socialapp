@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
   text: {
@@ -7,7 +7,7 @@ const postSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'user'
+    ref: "user"
   },
   avatar: {
     type: String
@@ -23,7 +23,7 @@ const postSchema = new mongoose.Schema({
     {
       user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: "user"
       }
     }
   ],
@@ -31,8 +31,12 @@ const postSchema = new mongoose.Schema({
     {
       user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: "user"
       },
+      name: {
+        type: String
+      },
+
       text: {
         type: String,
         required: true
@@ -48,7 +52,7 @@ const postSchema = new mongoose.Schema({
   ]
 });
 
-const Posts = new mongoose.model('post', postSchema);
+const Posts = new mongoose.model("post", postSchema);
 
 module.exports = Posts;
 //text
