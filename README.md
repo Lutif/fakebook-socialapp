@@ -20,15 +20,33 @@ User can delete only his comments or posts not others.
 
 
 ### [Reactjs](https://github.com/facebook/react) 
-React is used for Front End, along with other required liberaries listed below.
+React is used for Front End, along with other required liberaries enlisted below.
 
--[axios](https://github.com/axios/axios)
--[react-router-dom](react-router-dom)
--redux
--react-redux
--redux-thunk
--redux-devtools-extension
--moment
--redux-moment
+* [axios](https://github.com/axios/axios)
+* [react-router-dom](react-router-dom)
+* [redux](https://github.com/reduxjs/redux)
+* [react-redux](https://github.com/reduxjs/react-redux)
+* [redux-thunk](https://github.com/reduxjs/redux-thunk)
+* [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
+* [moment](https://github.com/moment/moment)
+* [react-moment](https://github.com/headzoo/react-moment)
+
+### [Nodejs](https://github.com/nodejs)
+Node use used as Java Script runtime engine to power the backend Expressjs server.
+
+### [Expressjs](github.com/expressjs/express)
+Express is choosed for backEnd server.
+
+### [Mongodb](https://github.com/mongodb/mongo)
+All the data is saved on mongodb clustor hosted on mongoAtlas.
 
 ### Heroku 
+The app is hosted on heroku at https://fakebook00.herokuapp.com/
+
+### Other back end dependencies 
+* [bcryptjs](https://github.com/dcodeIO/bcrypt.js/blob/master/README.md)
+* [express-validator](https://github.com/express-validator/express-validator)
+* [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+* [mongoose](https://github.com/Automattic/mongoose)
+
+---
