@@ -9,7 +9,7 @@ const bcrypt = require("bcryptjs");
 const gravatar = require("gravatar");
 
 //@route  POST api/user
-//@desc  Test
+//@desc  Resgister a user
 //@access public
 
 router.post(
@@ -63,7 +63,7 @@ router.post(
         (err, token) => {
           if (err) {
             return res
-              .status(5000)
+              .status(500)
               .json([{ msg: "jwt token cant be created" }]);
           }
           return res.status(201).json({ token });
@@ -72,6 +72,7 @@ router.post(
     } catch (err) {
       console.error(err);
       res.status(500).send("server error");
+      
     }
   }
 );
